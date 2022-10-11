@@ -1,0 +1,215 @@
+<head>
+    <title>
+        Student Form
+    </title>
+</head>
+
+<header>
+<h1>
+<center>Student Form</center>
+</h1>
+</header>
+
+<body>
+    <center><table border="4">
+    <tbody>
+      <tr>
+      <td>
+      <label for="name"> Please enter your name:</label>
+      <input type="text" id="name" name="name" minlength="3" maxlength="20" required>
+      </td>
+      </tr>
+
+
+      <tr>
+      <td>
+      <label for="Date of Birth">Date of Birth:</label>
+      <input type="date" id="Date of Birth" name="Birth-start"
+       value="1962-10-11"
+       min="1962-10-11" max="2004-10-11" required>
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <label for="Weight">Persons' Weight (45-150 Kg):</label>
+      <input type="number" id="Weight" name="Weight"
+       value= "45" min="45" max="150"> 
+      <label for="Measurement">Kg</label>
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <label for="Gender">Gender:</label>
+      <input type="radio" id="Gender"
+       name="Gender" value="Male">
+      <label for="Gender">Male</label>
+     
+      <input type="radio" id="Gender"
+       name="Gender" value="Female">
+      <label for="Gender">Female</label>
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email"size="30" required>
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <label for="Mobile">Enter your mobile phone number: +962</label>
+      <input type="tel" id="Mobile" name="Mobile"
+       pattern="'+962'-[0-9]{3}-[0-9]{3}-[0-9]{3}"
+       required>
+      <small>Format: 7XX-XXX-XXX</small>
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+        <label for="Governorate">Please choose the Governorate you live in:</label>
+      <select id="Governorate" name="Governorate">
+          <option value=" ">  </option>
+          <option value="Amman">Amman</option>
+          <option value="Salt">Salt</option>
+          <option value="Karak">Karak</option>
+          <option value="Mafraq">Mafraq</option>
+          <option value="Aqabah">Aqabah</option>
+          <option value="Maadabah">Maadabah</option>
+          <option value="Ajloun">Ajloun</option>
+          <option value="Tafealah">Tafealah</option>
+          <option value="Maan">Maan</option>
+          <option value="Zaqaa">Zarqaa</option>
+          <option value="Jerash">Jerash</option>
+          <option value="Irbid">Irbid</option>
+      </select>
+      </td>
+      </tr>
+
+
+      <tr>
+      <td>
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <label for="CV">Upload your CV:</label>
+      <input type="file" id="CV"
+       accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+      </td>
+      </tr>
+
+
+
+      <tr>
+      <td>
+      <input type="checkbox" id="Agreement" name="Agreement" unchecked>
+      <label for="Agreement">I agree to receive messages to my email from this page.</label>
+      </td>
+      </tr>
+
+      <tr id="btna">
+        <td colspan="2"><center><input type="button" name="button" id="btn" value="Submit" onclick="AddRow()"></center></td>
+</tbody>
+</table></center>
+    <hr/>
+
+    <center><table border="4" id="show">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Of Birth</th>
+                <th>Weight</th>
+                <th>Gender</th>
+                <th>email</th>
+                <th>Mobile</th>
+                <th>Governorate</th>
+                <th>favcolor</th>
+                <th>CV</th>
+                <th>Agreement</th>
+            </tr>
+        </thead>
+    </table></center>
+
+
+<script>
+    
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+    var list4 = [];
+    var list5 = [];
+    var list6 = [];
+    var list7 = [];
+    var list8 = [];
+    var list9 = [];
+    var list10 = [];
+
+
+    var n = 1;
+    var x = 0;
+
+    function AddRow(){
+
+        var AddRown = document.getElementById('show');
+        var NewRow = AddRown.insertRow(n);
+
+        list1[x] = document.getElementById("name").value;
+        list2[x] = document.getElementById("Date of Birth").value;
+        list3[x] = document.getElementById("Weight").value;
+        list4[x] = document.getElementById("Gender").value;
+        list5[x] = document.getElementById("email").value;
+        list6[x] = document.getElementById("Mobile").value;
+        list7[x] = document.getElementById("Governorate").value;
+        list8[x] = document.getElementById("favcolor").value;
+        list9[x] = document.getElementById("CV").value;
+        list10[x] = document.getElementById("Agreement").value;
+
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+        var cel4 = NewRow.insertCell(3);
+        var cel5 = NewRow.insertCell(4);
+        var cel6 = NewRow.insertCell(5);
+        var cel7 = NewRow.insertCell(6);
+        var cel8 = NewRow.insertCell(7);
+        var cel9 = NewRow.insertCell(8);
+        var cel10 = NewRow.insertCell(9);
+
+        cel1.innerHTML = list1[x];
+        cel2.innerHTML = list2[x];
+        cel3.innerHTML = list3[x];
+        cel4.innerHTML = list4[x];
+        cel5.innerHTML = list5[x];
+        cel6.innerHTML = list6[x];
+        cel7.innerHTML = list7[x];
+        cel8.innerHTML = list8[x];
+        cel9.innerHTML = list9[x];
+        cel10.innerHTML = list10[x];
+
+        n++;
+        x++;
+    }
+
+</script>
+
+</body>
